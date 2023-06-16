@@ -7,18 +7,20 @@
  */
 int main(void)
 {
-int u = 97;
+int n = 97;
 int v = 65;
-while (u <= 122)
+while (n <= 122)
 {
-putchar(u);
-u++;
+putchar(n);
+n++;
 }
 while (v <= 90)
 {
 putchar(v);
 v++;
 }
-putchar(u);
+{
+putchar(n);
+}
 return (0);
 }
