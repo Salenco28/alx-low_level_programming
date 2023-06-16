@@ -19,8 +19,6 @@ while (v <= 90)
 putchar(v);
 v++;
 }
-{
 putchar(n);
-}
 return (0);
 }
