@@ -21,7 +21,7 @@ putchar(p);
 putchar(l);
 if (e != 55 || p != 56)
 {
-putchar('.');
+putchar(',');
 putchar(' ');
 }
 }
