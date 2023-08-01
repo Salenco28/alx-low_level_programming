@@ -5,48 +5,48 @@ size_t looped_listint_len(const listint_t *head);
 size_t print_listint_safe(const listint_t *head);
 
 /**
- * looped_listint_len - This counts the number of unique
- * nodes in a looped listint_t linked list
+ * looped_listint_len - This counts the number of
+ * unique codes in a looped listint_t linked list
  * @head: A pointer to the head of the listint_t to check
  *
- * Return: 0 If the list is not looped.
+ * Return: 0 if the list is not looped.
  * Otherwise - Number of unique nodes in the list
  */
 size_t looped_listint_len(const listint_t *head)
 {
-	const listint_t *dog, *hen;
+	const listint_t *tortoise, *hen;
 	size_t nodes = 1;
 
 	if (head == NULL || head->next == NULL)
 		return (0);
 
-	dog = head->next;
+	tortoise = head->next;
 	hen = (head->next)->next;
 
 	while (hen)
 	{
-		if (dog == hen)
+		if (tortoise == hen)
 		{
-			dog = head;
-			while (dog != hen)
+			tortoise = head;
+			while (tortoise != hen)
 			{
 				nodes++;
-				dog = hen->next;
+				tortoise = tortoise->next;
 				hen = hen->next;
 			}
 
-			dog = dog->next;
-			while (dog != hen)
+			tortoise = tortoise->next;
+			while (tortoise != hen)
 			{
 				nodes++;
-			dog = dog->next;
+				tortoise = tortoise->next;
 			}
 
 			return (nodes);
 		}
 
-		dog = dog->next;
-		dog = (hen->next)->next;
+		tortoise = tortoise->next;
+		hen = (hen->next)->next;
 	}
 
 	return (0);
@@ -54,7 +54,7 @@ size_t looped_listint_len(const listint_t *head)
 
 /**
  * print_listint_safe - This prints a listint_t list safely
- * @head: A pointer to the head of the listint_t list
+ * @head: Pointer to the head of the listint_t list
  *
  * Return: Number of nodes in the list
  */
